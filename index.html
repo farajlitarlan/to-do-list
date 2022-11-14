@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+        </script>
+    <title>To Do List</title>
+</head>
+<body>
+    <div class="container">
+        <div class="todo">
+            <div class="yellow"></div>
+            <h1>To Do List</h1>
+            <div class="icon" id="iconSort"><img src="../downsort.svg" alt="" class="img1"></div>
+            <div class="inputname">
+                <input type="text" id="i">
+            </div>
+           <div class="outer">
+            <ul id="ul">
+            
+            </ul>
+           </div>
+            <button onclick="newElement()" id="btn">
+                <!-- <div id="dddd" onclick="newElement()"></div> -->
+                <div class="d" onclick="return false"><span>Добавить</span></div>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
