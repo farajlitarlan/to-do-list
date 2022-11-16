@@ -49,24 +49,27 @@
     margin-bottom: 18px;
 }
 .icon {
+    margin-left: 300px;
     display: flex;
-    justify-content: flex-end;
-    padding: 0 20px;
-    margin: 15px 0;
-    cursor: pointer;
+    /* justify-content: flex-end;  */
+    padding: 2px 2px;
+    /* margin: 15px 0; */
+    /* cursor: pointer; */
+
 }
 .container:hover {
    
     box-shadow: 0 0 13px gray;
+    box-shadow: 0 0 7px lightgray;
 }
 
-.img1:hover {
-    background: url("../downhover.svg") no-repeat;
+/* .img1:hover {
+    background: url("downhover.svg") no-repeat;
     margin-left: 300px;
-    z-index: 0;
-}
-
-
+    z-index:99;
+    -webkit-filter: brightness(0%);
+} */
+ 
 
 .inputname {
     display: flex;
@@ -84,7 +87,7 @@
     
     box-shadow: 0 0 8px gray;
 }
-button {
+.btn {
     display: flex;
     align-items: center;
     text-align: center;
@@ -100,7 +103,7 @@ button {
     font-weight: 400;
     font-size: 14px;
 }
-/* button a {
+/* .btn a {
     height: 100%;
     width: 45px;
     border-radius: 70px;
@@ -108,7 +111,7 @@ button {
     color: white;
     text-decoration: none;
 } */
-button div::before {
+.btn div::before {
     text-decoration: none !important;
     content: "+";
     line-height: 42px;
@@ -153,4 +156,12 @@ li span {
     border-radius: 100%;
     color: #C4C4C4;
     cursor: pointer;
+}
+
+
+
+
+.outer{
+    max-height: 310px;
+    overflow-y: scroll;
 }

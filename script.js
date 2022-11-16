@@ -1,6 +1,6 @@
 var input = document.getElementById("i");
 var btn = document.getElementById("btn");
-// var sort = document.getElementById("iconSort");
+var sort = document.getElementById("iconSort");
 
 var arr = [];
 
@@ -75,3 +75,12 @@ function newElement() {
 }
 
 
+document.querySelector('.icon').addEventListener('click', (event) =>
+  {
+      if (event.target.src.indexOf("downsort.svg") != -1)
+      { event.target.src = 'upsort.svg'; sortList(true) }
+      else { event.target.src = 'downsort.svg'; sortList(false); }
+  })
+
+
+  
