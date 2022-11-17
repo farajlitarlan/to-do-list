@@ -4,12 +4,12 @@ var sort = document.getElementById("iconSort");
 
 var arr = [];
 
-document.getElementById("btn").addEventListener("click", function() {
+document.getElementById("btn").addEventListener("click", function(e) {
    e.preventDefault();
    var inputv = document.getElementById("i").value;
    
    var arrInput = arr.push(inputv)
-   console.log(arr);
+   
   
 
 })
@@ -25,7 +25,7 @@ document.getElementById("i").addEventListener("keyup", function(event) {
       if(input.value == "") {
          alert("List item must be add!")
       } else {
-         console.log(input.value)
+         
          document.getElementById("ul").appendChild(lis);
          document.getElementById("ul").appendChild(lis).style.wordBreak = "break-word";
          lis.style.height = "auto"
@@ -53,7 +53,7 @@ function newElement() {
    if(input.value == "") {
       alert("List item must be add!")
    } else {
-      console.log(input.value)
+    
       document.getElementById("ul").appendChild(li);
       document.getElementById("ul").appendChild(li).style.wordBreak = "break-word";
       li.style.height = "auto"
@@ -71,7 +71,7 @@ function newElement() {
        }
     }
     input.value = "";
-  
+    enableDragList('todo-list')
 }
 
 
@@ -83,4 +83,40 @@ document.querySelector('.icon').addEventListener('click', (event) =>
   })
 
 
+ 
+ 
+ function enableDragList(listClass) {
+   const list = document.getElementsByClassName(listClass)[0];
+   Array.prototype.map.call(list.children, (item) => {
+      enableDragItem(item)
+   });
+ }
+ 
+ function enableDragItem(item) {
   
+   item.setAttribute('draggable', true)
+   item.ondrag = handleDrag;
+   item.ondragend = handleDrop;
+ }
+ 
+ function handleDrag(item) {
+   const selectedItem = item.target,
+         list = selectedItem.parentNode,
+         x = item.clientX,
+         y = item.clientY;
+  
+   selectedItem.classList.add('drag-sort-active');
+   let swapItem = document.elementFromPoint(x, y) === null ? selectedItem : document.elementFromPoint(x, y);
+   
+   if (list === swapItem.parentNode) {
+     swapItem = swapItem !== selectedItem.nextSibling ? swapItem : swapItem.nextSibling;
+     list.insertBefore(selectedItem, swapItem);
+   }
+ }
+ 
+ function handleDrop(item) {
+   item.target.classList.remove('drag-sort-active');
+ }
+ 
+
+

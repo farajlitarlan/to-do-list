@@ -31,6 +31,11 @@
     color:  gray;
 }
 
+li.drag-sort-active {
+  
+    border: 1px solid #4ca1af;
+}
+
 
 
 .d:hover {
