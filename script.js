@@ -122,22 +122,43 @@ function newElement() {
  }
  
 
-function sorting(){
-let nodeList = document.querySelectorAll('input');
-let str = new Array ;
-for(let i =0 ; i<(nodeList.length); i++) {
-   if(nodeList[i].value!='')
-   str[i]=nodeList[i].value
-}
+// function sorting(){
+// let nodeList = document.querySelectorAll('input');
+// let str = new Array ;
+// for(let i =0 ; i<(nodeList.length); i++) {
+//    if(nodeList[i].value!='')
+//    str[i]=nodeList[i].value
+// }
 
-str.sort();
-str.reverse()
-for(let i =0;i<n(nodeList.length); i++ ){
-   nodeList[i].value=str[i]
-   if(str[i]==undefined) 
-   nodeList[i].value=''
-}
-}
+// str.sort();
+// str.reverse()
+// for(let i =0;i<n(nodeList.length); i++ ){
+//    nodeList[i].value=str[i]
+//    if(str[i]==undefined) 
+//    nodeList[i].value=''
+// }
+// }
+function sortItem() {
+   var ul, i, pas, li, shouldpas;
+   ul = document.getElementById("ul");
+   pas = true;
+   while (pas) {
+     pas = false;
+     li = ul.getElementsByTagName("LI");
+     for (i = 0; i < (li.length - 1); i++) {
+       shouldpas = false;
+       if (li[i].innerHTML.toLowerCase() > li[i + 1].innerHTML.toLowerCase()) {
+         shouldpas = true;
+         break;
+       }
+     }
+     if (shouldpas) {
+       li[i].parentNode.insertBefore(li[i + 1], li[i]);
+       pas = true;
+     }
+   }
+ }
+
 
 
 
