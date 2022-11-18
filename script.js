@@ -2,7 +2,7 @@ let input = document.getElementById("i");
 let btn = document.getElementById("btn");
 // let icon = document.getElementById("iconSort");
 let icon = document.querySelectorAll('.icon');
-
+let sortList
 
 icon.addEventListener('click' , sorting);
 
@@ -78,15 +78,7 @@ function newElement() {
     enableDragList('todo-list')
 }
 
-
-document.querySelector('.icon').addEventListener('click', (event) =>
-{
-    if (event.target.src.indexOf("downsort.svg") != -1)
-    { event.target.src = 'upsort.svg'; sortList(true) }
-    else { event.target.src = 'downsort.svg'; sortList(false); }
-})
-
-
+ 
  
  function enableDragList(listClass) {
    const list = document.getElementsByClassName(listClass)[0];
