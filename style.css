@@ -68,13 +68,12 @@ li.drag-sort-active {
     box-shadow: 0 0 7px lightgray;
 }
 
-/* .img1:hover {
+.img1:hover {
     background: url("downhover.svg") no-repeat;
     margin-left: 300px;
     z-index:99;
     -webkit-filter: brightness(0%);
-} */
- 
+} 
 
 .inputname {
     display: flex;

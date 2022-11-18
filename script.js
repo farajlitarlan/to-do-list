@@ -1,6 +1,9 @@
 var input = document.getElementById("i");
 var btn = document.getElementById("btn");
-var sort = document.getElementById("iconSort");
+// var icon = document.getElementById("iconSort");
+var icon = document.querySelectorAll('.icon');
+
+icon.addEventListener('click' , sorting);
 
 var arr = [];
 
@@ -74,15 +77,6 @@ function newElement() {
     enableDragList('todo-list')
 }
 
-
-document.querySelector('.icon').addEventListener('click', (event) =>
-  {
-      if (event.target.src.indexOf("downsort.svg") != -1)
-      { event.target.src = 'upsort.svg'; sortList(true) }
-      else { event.target.src = 'downsort.svg'; sortList(false); }
-  })
-
-
  
  
  function enableDragList(listClass) {
@@ -119,4 +113,23 @@ document.querySelector('.icon').addEventListener('click', (event) =>
  }
  
 
+function sorting(){
+let nodeList = document.querySelectorAll('input');
+let str = new Array ;
+for(let i =0 ; i<(nodeList.length); i++) {
+   if(nodeList[i].value!='')
+   str[i]=nodeList[i].value
+}
 
+str.sort();
+str.reverse()
+for(let i =0;i<n(nodeList.length); i++ ){
+   nodeList[i].value=str[i]
+   if(str[i]==undefined) 
+   nodeList[i].value=''
+}
+}
+
+
+
+document.querySelector('.icon').addEventListener('click' , sorting);
